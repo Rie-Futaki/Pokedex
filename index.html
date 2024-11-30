@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <header class = "header">
+        <h1>Pokédex</h1>
+        <button id = "caught-list">Caught Pokémon</button>
+    </header>
+
+    <main class = "container">
+         <!-- 
+        <div class = "pokebox">
+            <figure class = "sprite">
+                <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + "[POKEMON ID]" + ".png">
+                <figcaption>[POKEMON NAME]</figcaption>
+            </figure>
+        </div>
+        -->
+    </main>
+
+    <footer class = "footer">
+        <button id = "more">Get more Pokémon!</button>
+    </footer>
+    
+    <dialog id = "dialog">
+        <div id = "infobox">
+        <!--- 
+            <figure class = "officialArt">
+                <figcaption>[POKEMON NAME]</figcaption>
+                <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + "[POKEMON ID]" + ".png">
+            </figure>
+            <div class = "pokeinfo">
+                <ul class = "typeinfo">
+                    <h2>Types</h2>
+                    <li class = "type">[POKEMON TYPE]</li>
+                </ul>
+                <ul class = "moveinfo">
+                    <h2>Moves</h2>
+                    <li class = "move">[POKEMON MOVE]</li>
+            </div>
+        -->
+        </div>
+        <button id = "catch" class = "catch">Catch!</button>
+        <button id = "close">Close</button>
+    </dialog>
+
+    <dialog id = "list">
+        <p class = "noPokemon">It seems you do not have any caught Pokémon.</p>
+        <div class = "list-container">
+            <!-- 
+            <div class = "pokebox">
+                <figure class = "sprite">
+                    <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + "[POKEMON ID]" + ".png">
+                <figcaption>[POKEMON NAME]</figcaption>
+                </figure>
+            </div>
+            -->
+        </div>
+        <button id = "list-close">Close</button>
+    </dialog>
+
+    <script src = "script.js"></script>
+</body>
+</html>
