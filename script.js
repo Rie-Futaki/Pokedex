@@ -173,18 +173,23 @@ $catch.addEventListener('click', function(e){
         const pokeData = JSON.parse(localStorage.getItem(`caught${info}`))
         caughtList.splice(caughtList.indexOf(`{"name":"${pokeData.name}","url":"${pokeData.url}"}`), 1)
         localStorage.removeItem(`caught${info}`)
+        $catch.classList.remove("release")
+        $catch.classList.add("catch")
+        $catch.textContent = "Catch!"
     }
     else{
         const info = $catch.previousElementSibling.getAttribute("pokeid")
         const $pokebox = document.querySelector(`.pokebox:nth-child(${info})`)
         $pokebox.classList.add("caught")
         singlePokemon(info)
+        $catch.classList.remove("catch")
+        $catch.classList.add("release")
+        $catch.textContent = "Release"
     }
 })
 
-//Viewing current list of caught Pokémon:
-
-$listOpen.addEventListener('click', function(){
+// Update the "caught" list and list display:
+function updateList(){
     const objectArray = []
     for (let i = 0; i < caughtList.length; i++){
         const pokeData = JSON.parse((caughtList[i]))
@@ -211,6 +216,12 @@ $listOpen.addEventListener('click', function(){
     }
     else{$message.classList.remove("hidden")
     }
+}
+
+//Viewing current list of caught Pokémon:
+
+$listOpen.addEventListener('click', function(){
+   updateList()
     $listDialog.showModal()
 })
 
@@ -229,5 +240,6 @@ $listContainer.addEventListener('click', function(e){
 })
 
 $close.addEventListener('click', function(){
+    updateList()
     $dialog.close()
 })
