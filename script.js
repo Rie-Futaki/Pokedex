@@ -19,13 +19,6 @@ function parseUrl (url) {
   
 // Get first 20 Pokémon:
 
-async function fetchPokemon (){
-    const response = await fetch ("https://pokeapi.co/api/v2/pokemon/")
-    const pokemon = await response.json()
-    displayPokemon(pokemon.results)
-    checkStatus()
-}
-
 function displayPokemon(pokemonList){
     pokedex.push(...pokemonList)
     $container.innerHTML = pokedex.reduce((html, pokemon) => html +
@@ -36,6 +29,13 @@ function displayPokemon(pokemonList){
     </figure>
 </div>
 `,'')
+}
+
+async function fetchPokemon (){
+    const response = await fetch ("https://pokeapi.co/api/v2/pokemon/")
+    const pokemon = await response.json()
+    displayPokemon(pokemon.results)
+    checkStatus()
 }
 
 fetchPokemon()
